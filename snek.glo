@@ -7,11 +7,7 @@
 running <- Αληθης
 playerPos <- 5
 score <- 0
-Αν playerPos + 2 > 10 τοτε
-  fruitPos <- playerPos - 2
-Αλλιως
-  fruitPos <- playerPos + 2
-τελος_αν
+fruitPos <- playerPos + 2
 Οσο running = Αληθης επαναλαβε
   Για i απο 1 μεχρι 10
       G[i] <- "."
@@ -36,7 +32,7 @@ score <- 0
   Αν newPlayerPos = fruitPos τοτε
   	score <- score +1
     G[fruitPos] <- "."
-    Αν playerPos + +3 > 10 τοτε
+    Αν playerPos + 3 > 10 τοτε
       fruitPos <- playerPos - 4
     Αλλιως
       fruitPos <- playerPos + 3
