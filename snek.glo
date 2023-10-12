@@ -1,0 +1,51 @@
+﻿ΠΡΟΓΡΑΜΜΑ snek
+ΜΕΤΑΒΛΗΤΕΣ
+ακεραιες:i,playerPos,oldPlayerPos,fruitPos,newPlayerPos,score
+χαρακτηρες: G[10],input
+λογικες: running
+Αρχη
+running <- Αληθης
+playerPos <- 5
+score <- 0
+Αν playerPos + 2 > 10 τοτε
+  fruitPos <- playerPos - 2
+Αλλιως
+  fruitPos <- playerPos + 2
+τελος_αν
+Οσο running = Αληθης επαναλαβε
+  Για i απο 1 μεχρι 10
+      G[i] <- "."
+  τελος_επαναληψης
+  oldPlayerPos <- playerPos
+  G[fruitPos] <- "#"
+  G[playerPos] <- "o"
+  Γραψε "score: ", score
+  Γραψε G[1],G[2],G[3],G[4],G[5],G[6],G[7],G[8],G[9],G[10]
+  Αρχη_επαναληψης
+  Διαβασε input
+  μεχρις_οτου input = "a" Η input = "d" Η input = "q"
+  Αν input = "q" τοτε
+	running <- Ψευδης
+  Αλλιως_αν input = "d" τοτε
+  	newPlayerPos <- playerPos + 1
+    G[oldPlayerPos] <- "."
+  Αλλιως
+  	newPlayerPos <- playerPos - 1
+    G[oldPlayerPos] <- "."
+  τελος_αν
+  Αν newPlayerPos = fruitPos τοτε
+  	score <- score +1
+    G[fruitPos] <- "."
+    Αν playerPos + +3 > 10 τοτε
+      fruitPos <- playerPos - 4
+    Αλλιως
+      fruitPos <- playerPos + 3
+    τελος_αν
+  τελος_αν
+  Επιλεξε newPlayerPos
+    περιπτωση 0..10
+     playerPos <- newPlayerPos
+     G[oldPlayerPos] <- "." 
+  τελος_επιλογων
+τελος_επαναληψης
+ΤΕΛΟΣ_ΠΡΟΓΡΑΜΜΑΤΟΣ
